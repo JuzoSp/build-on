@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <title>Contact Build-On</title>
+</head>
+
+<body class="w-full h-full flex  justify-center items-center">
+    <div class="w-full h-full flex flex-col justify-center items-center">
+        <h1 class="text-3xl font-bold text-gray-500">
+            Formulaire de contact
+        </h1>
+        <div class="mt-4">
+            <form class="container w-[480px] p-3 border-[1px] bg-gray-200 border-gray-300 rounded-md" method="POST"
+                action="/submit">
+                <div class="flex flex-col mb-3">
+                    <label class="text-left text-rose-700" for="name">Nom complet:</label>
+                    <input class="form-control h-[32px] px-2 rounded-md text-gray-500 mt-2" type="text" id="name"
+                        name="name" placeholder="Nom complet" required="" minlength="1">
+                </div>
+                <div class="flex flex-col mb-3">
+                    <label class="text-left text-rose-700" for="email">E-mail:</label>
+                    <input class="form-control h-[32px] px-2 rounded-md text-gray-500 mt-2" type="email" id="email"
+                        name="email" placeholder="Email" required="" minlength="1" inputmode="email">
+                </div>
+                <div class="flex flex-col mb-3">
+                    <label class="text-left text-rose-700" for="num">Numéro de téléphone:</label>
+                    <input class="form-control h-[32px] px-2 rounded-md text-gray-500 mt-2" type="number" id="num"
+                        name="num" placeholder="Numéro de téléphone" required="" maxlength="13">
+                </div>
+                <div class="flex flex-col mb-3">
+                    <label class="text-left text-rose-700" for="message">Message:</label>
+                    <textarea class="form-control h-[180px] px-2 rounded-md text-gray-500 mt-2" id="message"
+                        name="message" rows="6" placeholder="Message" required="" minlength="15"></textarea>
+                </div>
+                <div class="mt-6">
+                    <button type="submit" class="button  text-gray-200 font-semibold rounded-full px-3 py-1"
+                        style="background: rgba(78,9,9,0.84);">Envoyer
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

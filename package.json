@@ -1,0 +1,30 @@
+{
+  "name": "contact-form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuzoSp/build-on.git"
+  },
+  "keywords": [
+    "form"
+  ],
+  "author": "Hasina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuzoSp/build-on/issues"
+  },
+  "homepage": "https://github.com/JuzoSp/build-on#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mysql": "^2.18.1"
+  }
+}

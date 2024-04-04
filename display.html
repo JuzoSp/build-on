@@ -1,36 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Build-On</title>
+    <title>Affichage des données</title>
 </head>
 
 <body>
-    <h1 class="text-gray-500 text-xl font-semibold">Liste de tous les clients</h1>
-    <div id="data-container"></div>
+    <div class="w-full flex flex-col items-center justify-center">
+        <h1 class="text-gray-500 text-xl font-semibold">Liste de tous les clients</h1>
+        <ul id="data-list">
+        </ul>
+    </div>
     <script>
-        $(document).ready(function () {
-            // Requête AJAX pour récupérer les données depuis le serveur
-            $.ajax({
-                url: '/data', // URL de la route côté serveur
-                method: 'GET',
-                success: function (data) {
-                    // Traitement des données récupérées
-                    data.forEach(function (item) {
-                        $('#data-container').append('<p>' + item.fieldName + '</p>');
-                    });
-                },
-                error: function (xhr, status, error) {
-                    console.error('Une erreur s\'est produite:', status, error);
-                }
+        fetch('/data')
+            .then(response => response.json())
+            .then(data => {
+                // Une fois que les données sont récupérées avec succès
+                //Afaka verifiena amin'ny consol.log(data)
+                const dataList = document.getElementById('data-list');
+                data.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `
+                <div>ID: ${item.id}</div></br>
+                <div>Nom: ${item.name}</div></br>
+                <div>Numéro: ${item.num}</div></br>
+                <div>email: ${item.email}</div></br>
+                <div>Message: ${item.message}</div>
+            `;
+                    dataList.appendChild(listItem);
+                });
+            })
+            .catch(error => {
+                console.error('Une erreur s\'est produite:', error);
             });
-        });
-    </script>
 
+    </script>
 </body>
 
 </html>

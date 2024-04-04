@@ -25,31 +25,31 @@
             Formulaire de contact
         </h1>
         <div class="mt-4">
-            <form class="container w-[480px] p-3 border-[1px] bg-gray-200 border-gray-300 rounded-md" method="POST"
+            <form class="container w-[680px] p-3 border-[1px] bg-gray-200 border-gray-300 rounded-md" method="POST"
                 action="/submit">
                 <div class="flex flex-col mb-3">
-                    <label class="text-left text-rose-700" for="name">Nom complet:</label>
+                    <label class="text-left text-gray-700" for="name">Nom complet:</label>
                     <input class="form-control h-[32px] px-2 rounded-md text-gray-500 mt-2" type="text" id="name"
                         name="name" placeholder="Nom complet" required="" minlength="1">
                 </div>
                 <div class="flex flex-col mb-3">
-                    <label class="text-left text-rose-700" for="email">E-mail:</label>
+                    <label class="text-left text-gray-700" for="email">E-mail:</label>
                     <input class="form-control h-[32px] px-2 rounded-md text-gray-500 mt-2" type="email" id="email"
                         name="email" placeholder="Email" required="" minlength="1" inputmode="email">
                 </div>
                 <div class="flex flex-col mb-3">
-                    <label class="text-left text-rose-700" for="num">Numéro de téléphone:</label>
+                    <label class="text-left text-gray-700" for="num">Numéro de téléphone:</label>
                     <input class="form-control h-[32px] px-2 rounded-md text-gray-500 mt-2" type="number" id="num"
                         name="num" placeholder="Numéro de téléphone" required="" maxlength="13">
                 </div>
                 <div class="flex flex-col mb-3">
-                    <label class="text-left text-rose-700" for="message">Message:</label>
+                    <label class="text-left text-gray-700" for="message">Message:</label>
                     <textarea class="form-control h-[180px] px-2 rounded-md text-gray-500 mt-2" id="message"
                         name="message" rows="6" placeholder="Message" required="" minlength="15"></textarea>
                 </div>
                 <div class="mt-6">
-                    <button type="submit" class="button  text-gray-200 font-semibold rounded-full px-3 py-1"
-                        style="background: rgba(78,9,9,0.84);">Envoyer
+                    <button type="submit"
+                        class="button bg-amber-700 hover:bg-amber-800 text-white transition duration-300 transform hover:scale-80 animate-pulse font-normal rounded-full px-3 py-2">Envoyer
                     </button>
                 </div>
             </form>

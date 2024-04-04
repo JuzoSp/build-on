@@ -37,11 +37,32 @@ app.post('/submit', (req, res) => {
     const formData = { name, email, num, message };
 
     // Insertion des données dans la base de données
-    db.query('INSERT INTO contacts SET ?', formData, (err, result) => {
+    db.query('INSERT INTO contacts SET ?', formData, (err, data) => {
         if (err) {
             res.sendFile(__dirname + '/error.html');
         } else {
             res.sendFile(__dirname + '/success.html');
+        }
+    });
+});
+
+// Route pour servir la page HTML display.html
+app.get('/display', (req, res) => {
+    res.sendFile(__dirname + '/display.html');
+});
+
+// Route pour récupérer des données depuis la base de données
+app.get('/data', (req, res) => {
+    // Effectuez une requête à la base de données pour récupérer les données
+    db.query('SELECT * FROM contacts', (err, data) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+        } else {
+            //Atao anaty tableau ilay données sous format JSON
+            // const dataArray = [data];
+            // res.json(dataArray);
+            //Tsy atao anaty tableau
+            res.json(data);
         }
     });
 });

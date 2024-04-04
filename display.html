@@ -24,11 +24,13 @@
                 data.forEach(item => {
                     const listItem = document.createElement('li');
                     listItem.innerHTML = `
+                    <div class="card flex flex-col justify-center items-start p-2 w-[420px] rounded-md bg-red-300 mb-2">
                 <div>ID: ${item.id}</div></br>
                 <div>Nom: ${item.name}</div></br>
                 <div>Numéro: ${item.num}</div></br>
                 <div>email: ${item.email}</div></br>
                 <div>Message: ${item.message}</div>
+                </div>
             `;
                     dataList.appendChild(listItem);
                 });
